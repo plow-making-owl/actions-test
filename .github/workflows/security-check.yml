@@ -1,0 +1,19 @@
+name: Baby Secret Scanner
+
+on: push
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the code
+        uses: actions/checkout@v4
+
+      - name: Check for hardcoded secrets
+        run: |
+          if grep -rn "API_KEY=" . --include="*.txt"; then
+            echo "Found a hardcoded secret!"
+            exit 1
+          else
+            echo "No secrets found."
+          fi
