@@ -1,6 +1,6 @@
 name: Baby Secret Scanner
 
-on: push
+on: pull
 
 jobs:
   scan:
