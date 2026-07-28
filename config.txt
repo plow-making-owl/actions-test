@@ -1,1 +1,1 @@
-app_name=demo
+API_KEY=supersecret123
